@@ -1,1 +1,4 @@
-command = /opt/homebrew/bin/tmux new-session -A -s main
+# Auto-start tmux (disabled: Shift+Enter issue in AI REPLs)
+# command = /opt/homebrew/bin/tmux new-session -A -s main
+keybind = ctrl+h=new_split:down
+keybind = ctrl+v=new_split:right
