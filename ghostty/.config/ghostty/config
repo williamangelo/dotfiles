@@ -1,4 +1,16 @@
-# Auto-start tmux (disabled: Shift+Enter issue in AI REPLs)
-# command = /opt/homebrew/bin/tmux new-session -A -s main
-keybind = ctrl+h=new_split:down
-keybind = ctrl+v=new_split:right
+# Remove macOS window decorations
+macos-titlebar-style = hidden
+macos-window-buttons = hidden
+
+# Quit when last window closes (instead of keeping app running)
+quit-after-last-window-closed = true
+
+# Auto-start tmux
+command = /opt/homebrew/bin/tmux new-session -A -s main
+
+# Fix Shift+Enter for Claude Code inside tmux
+keybind = shift+enter=text:\x1b\r
+
+# Disable Ghostty splits (use tmux splits instead)
+keybind = super+d=unbind
+keybind = super+shift+d=unbind
