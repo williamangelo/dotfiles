@@ -7,7 +7,23 @@ export NVM_DIR="$HOME/.nvm"
 
 alias python=/usr/bin/python3
 
+# yazi: exit into the last directory yazi was in
+function y() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    builtin cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
+}
+
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt share_history
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/william/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/william/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/william/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/william/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

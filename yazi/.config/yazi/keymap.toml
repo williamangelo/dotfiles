@@ -1,0 +1,13 @@
+[manager]
+keymap = [
+  # toggle hidden files
+  { on = ".", run = "hidden toggle", desc = "Toggle hidden files" },
+
+  # open editor
+  { on = "e", run = "open --interactive", desc = "Open with editor" },
+
+  # navigation: go to common dirs
+  { on = ["g", "h"], run = "cd ~", desc = "Go home" },
+  { on = ["g", "d"], run = "cd ~/Downloads", desc = "Go to Downloads" },
+  { on = ["g", "p"], run = "cd ~/dev", desc = "Go to dev projects" },
+]
