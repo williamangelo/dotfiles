@@ -1,5 +1,5 @@
 [manager]
-keymap = [
+prepend_keymap = [
   # toggle hidden files
   { on = ".", run = "hidden toggle", desc = "Toggle hidden files" },
 

@@ -1,3 +1,5 @@
+theme = Selenized Dark
+
 # Remove macOS window decorations
 macos-titlebar-style = hidden
 macos-window-buttons = hidden
