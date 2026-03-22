@@ -1,4 +1,5 @@
-theme = Selenized Dark
+theme = Selenized Black
+maximize = true
 
 # Remove macOS window decorations
 macos-titlebar-style = hidden
