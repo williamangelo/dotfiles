@@ -1,5 +1,6 @@
 theme = Selenized Black
 maximize = true
+font-size = 18
 
 # Remove macOS window decorations
 macos-titlebar-style = hidden
