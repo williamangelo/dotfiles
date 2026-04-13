@@ -12,8 +12,9 @@ quit-after-last-window-closed = true
 # Auto-start tmux
 command = /opt/homebrew/bin/tmux new-session -A -s main
 
-# Fix Shift+Enter for Claude Code inside tmux
-keybind = shift+enter=text:\x1b\r
+
+# Forward shift+enter as CSI-u sequence for compatibility with pi, Claude Code, and Codex
+keybind = shift+enter=text:\n
 
 # Disable Ghostty splits (use tmux splits instead)
 keybind = super+d=unbind
