@@ -22,3 +22,9 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt share_history
+
+autoload -Uz vcs_info
+precmd() { vcs_info }
+zstyle ':vcs_info:git:*' formats ' (%b)'
+setopt prompt_subst
+PROMPT='%F{cyan}%~%f%F{yellow}${vcs_info_msg_0_}%f %F{cyan}❯%f '
